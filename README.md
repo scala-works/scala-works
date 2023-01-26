@@ -70,6 +70,12 @@ to provide advice for:
 - CI/CD strategies
 - The platforms for Scala (JVM, ScalaJS, Scala Native)
 
+## Join In
+
+I've set up some topics in
+[GitHub Discussions](https://github.com/scala-works/scala-works/discussions) -
+feel free to join in the discussion!
+
 ## Stay Tuned
 
 Saying that we're new, and growing is currently an understatement, but feel free
