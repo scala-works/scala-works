@@ -7,7 +7,7 @@ it's two - we're already stronger together! We, as a community, aim to be open
 in hearing your challenges, frustrations, and tips to make working with Scala as
 drop-dead simple as possible.
 
-![Powered by Scala enthusiasts like you](https://img.shields.io/badge/Powered%20By-1%20Scala%20Enthusiast-red)
+![Powered by Scala enthusiasts like you](https://img.shields.io/badge/dynamic/json?color=red&label=Powered%20%20By&query=%24.stargazers_count&suffix=Scala%20Enthusiasts&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fscala-works%2Fscala-works)
 
 ## Who is Scala Works for?
 
@@ -19,7 +19,8 @@ gospel or an attack.
 We will talk authoritatively about code style, formatting, structuring, etc...
 but please know this comes from a place of _education_ and not a
 _authoritarianism_. We aim to provide _a_ collection of best practices, **not**
-_the definitive_ collection of best practices.
+_the definitive_ collection of best practices to help port your experience in
+other programming languages to Scala.
 
 With that in mind:
 
@@ -33,6 +34,8 @@ With that in mind:
 
 - People who already have developed their own "style" and prefer to do their own
   thing.
+- People completely new to programming (but see the
+  [Learning Scala](#learning-scala) section for links)
 
 ## What does Scala Works do?
 
@@ -75,6 +78,16 @@ to provide advice for:
 I've set up some topics in
 [GitHub Discussions](https://github.com/scala-works/scala-works/discussions) -
 feel free to join in the discussion!
+
+## Learning Scala
+
+We're sure you'll pick up knowledge along the way, but there are already a great
+number of absolutely amazing resources on _learning_ Scala. There is a great
+list [here](https://docs.scala-lang.org/learn.html) on Scala's site.
+
+With that in mind, we don't want to duplicate that effort. We're here to help
+you _use_ Scala, and abstract utilities "up the stack", so the initial
+boilerplate you might get stuck in can get out of the way.
 
 ## Stay Tuned
 
