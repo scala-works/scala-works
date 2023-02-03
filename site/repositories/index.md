@@ -1,0 +1,44 @@
+# Scala Works Repositories
+
+Here you can find a list of our current repositories. We're still getting things
+set up, so they're all currently in very early stages! Check back early and
+often, and feel free to contribute!
+
+## Scala Works
+
+This site!
+
+https://github.com/scala-works/scala-works
+
+## Scala Defaults
+
+A collection of default recommendations for things like formatting, linting, and
+project structure.
+
+https://github.com/scala-works/scala-defaults
+
+## Scala HTTP
+
+A Scala 3 driven micro framework around the tapir library
+
+https://github.com/scala-works/scala-http
+
+## Homebrew Scala Works
+
+A custom hombrew tap to deploy some of our apps!
+
+https://github.com/scala-works/homebrew-scala-works
+
+## Scala CMD
+
+A slim CLI framework for Scala apps
+
+https://github.com/scala-works/scala-cmd
+
+## Scala Site
+
+A Scala based static site generator.
+
+This site is built with it!
+
+https://github.com/scala-works/scala-site

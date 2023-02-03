@@ -32,7 +32,7 @@ jobs:
       - uses: coursier/cache-action@v6
       - uses: VirtusLab/scala-cli-setup@main
       - name: Build Site
-        run: scala-cli run generate.sc
+        run: ./build.sh
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact

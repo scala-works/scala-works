@@ -3,3 +3,5 @@
 .scala-build
 .vscode
 build
+site-mdoc
+ScalaSite.scala
