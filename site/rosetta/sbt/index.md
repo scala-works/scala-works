@@ -1,0 +1,113 @@
+# SBT
+
+[sbt](https://www.scala-sbt.org/) Is one of the most prevalent build tools in
+the Scala ecosystem.
+
+Here is the official
+[sbt by example](https://www.scala-sbt.org/1.x/docs/sbt-by-example.html) page,
+which is a great outline to get you started, and using sbt.
+
+Despite the complex build/task scenarios it can perform, it is simple to use and
+get started with. As with most build tools, there are a few idiosyncrasies to
+familiarize yourself with. This page serves as a quick extension to the official
+link above, and outlines a couple of the "tricky pieces".
+
+## Building Towards: build.sbt
+
+TODO put a final `build.sbt` here, so show a "final minimal" file that we're
+building up towards, so it doesn't feeling daunting to learn it line-by-line
+over the various sections.
+
+```scala
+
+ThisBuild / scalaVersion := "3.2.2"
+
+lazy val root = project.in(file("."))
+  .settings()
+
+```
+
+## The root project
+
+sbt handles building both single and multiple projects. One quirky thing you
+should know about right away is the `root` project. sbt will automatically
+assume there is a root project if you don't define one, which allows you to get
+started quickly without a lot of boilerplate definition.
+
+For example, these two `build.sbt` files should be functionally equivalent
+
+```scala
+ThisBuild / scalaVersion := "3.2.2"
+```
+
+```scala
+lazy val root = project.in(file("."))
+  .settings(
+    scalaVersion := "3.2.2"
+  )
+```
+
+The tricky part comes in when you start adding more projects, or organizing your
+code in a sub directory that is not in the `<root>` of your path. In that case,
+sbt will _create_ a root project, and aggregate all other projects in the build.
+
+For example, if we moved out code from `./` to `./my-project`, our `build.sbt`
+file might look like
+
+```scala
+lazy val myProject = project.in(file("my-project"))
+  .settings(
+    scalaVersion := "3.2.2"
+  )
+```
+
+And if we called `sbt compile`, what it's really doing is calling
+`sbt root/compile`, and aggregating that task to `myProject` as well! Explicitly
+stated, this might look like:
+
+```scala
+
+lazy val root = project.in(file("."))
+  .aggregate(myProject)
+
+lazy val myProject = project.in(file("my-project"))
+  .settings(
+    scalaVersion := "3.2.2"
+  )
+```
+
+This can be a source of frustration, especially when going from a single project
+to multiple projects as the source code grows - it might seem like something
+"just stopped working", because a setting was being applied to the "root"
+project, what what the "root" project was subtly changed! If this happens, you
+can just manually add in the root project again (like in the explicit example
+above), and adjust the settings to what you are expecting in relation to your
+sub projects - for example maybe you only want the root project to aggregate a
+subset of you other projects, and not all of them by default.
+
+To help avoid confusion, although you can quickly get started with a one-liner
+`build.sbt` file like `ThisBuild / scalaVersion := "3.2.2"`, you are encouraged
+to actually define your projects (even a root one), so that it's more apparent
+as to what is going on.
+
+See
+[here](https://www.scala-sbt.org/1.x/docs/Multi-Project.html#Default+root+project)
+for more info.
+
+## ThisBuild
+
+```scala
+ThisBuild / scalaVersion := "3.2.2"
+```
+
+`ThisBuild` is used to factor out common settings across multiple sub-projects.
+When a particular (sub-)project doesn't have a specific setting applied, then it
+will fall back to a value specified in `ThisBuild`
+
+See
+[here](https://www.scala-sbt.org/1.x/docs/Multi-Project.html#Build-wide+settings)
+for more.
+
+## Integration Tests
+
+TODO Show how to set up integration tests
