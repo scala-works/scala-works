@@ -51,7 +51,7 @@ The tricky part comes in when you start adding more projects, or organizing your
 code in a sub directory that is not in the `<root>` of your path. In that case,
 sbt will _create_ a root project, and aggregate all other projects in the build.
 
-For example, if we moved out code from `./` to `./my-project`, our `buildt.sbt`
+For example, if we moved out code from `./` to `./my-project`, our `build.sbt`
 file might look like
 
 ```scala
