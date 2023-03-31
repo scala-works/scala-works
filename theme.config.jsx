@@ -3,6 +3,6 @@ export default {
     project: {
       link: 'https://github.com/scala-works/scala-works',
     },
-    docsRepositoryBase: 'https://github.com/scala-works/scala-works/blob',
+    docsRepositoryBase: 'https://github.com/scala-works/scala-works/blob/main',
     // ...
   }
