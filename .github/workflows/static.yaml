@@ -29,17 +29,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: coursier/cache-action@v6
-      - uses: VirtusLab/scala-cli-setup@main
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 19
+          cache: 'yarn'
       - name: Build Site
-        run: ./build.sh
+        run: yarn install && yarn build && yarn export
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
-          path: "./build"
+          path: "./out"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
