@@ -1,0 +1,68 @@
+# Java
+
+## Build Tools
+
+In terms of build tools, Java developers typically use tools such as Maven or
+Gradle to manage dependencies and build projects. In Scala, the most popular
+build tool is sbt, which provides similar functionality to Maven and Gradle but
+with a more concise syntax. Sbt allows you to define dependencies, manage
+compilation and testing, and package your application for deployment.
+
+## Package Managers
+
+Both Java and Scala have package managers to manage external dependencies. In
+Java, the most popular package manager is Maven, which retrieves dependencies
+from Maven Central, a central repository for Java libraries. In Scala, sbt has a
+built-in package management system, which allows you to define dependencies in a
+build file and automatically download and cache them as needed.
+
+## Dependency Caching
+
+Dependency caching is important for both Java and Scala, as it can speed up the
+build process significantly. In Java, Maven caches dependencies in the user's
+local Maven repository. In Scala, sbt caches dependencies in the user's local
+Ivy2 cache.
+
+## Project Tree Structure
+
+Regarding the project source tree structure, both Java and Scala follow a
+similar structure, where source files are separated from build files, and the
+source tree structure is typically divided into different directories for code
+and tests. However, the actual folder structure can differ slightly between Java
+and Scala projects.
+
+Here's a typical file tree structure of a "Hello World" application including
+tests in Java:
+
+```
+HelloWorld/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── HelloWorld.java
+│   └── test/
+│       └── java/
+│           └── HelloWorldTest.java
+└── pom.xml
+```
+
+And here's the equivalent file tree structure in Scala:
+
+```
+HelloWorld/
+├── build.sbt
+├── project/
+│   ├── build.properties
+│   ├── plugins.sbt
+├── src/
+│   ├── main/
+│   │   └── scala/
+│   │       └── HelloWorld.scala
+│   └── test/
+│       └── scala/
+│           └── HelloWorldTest.scala
+```
+
+As you can see, the structure of a Scala project is quite similar to that of a
+Java project, with additional directories for sbt build files and project
+configuration.

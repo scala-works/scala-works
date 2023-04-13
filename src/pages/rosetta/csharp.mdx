@@ -1,0 +1,65 @@
+# C#
+
+Here's how Scala compares to C# in terms of tooling and project structure:
+
+## Build Tools
+
+C# developers typically use Microsoft's MSBuild or .NET Core's CLI (Command Line
+Interface). In Scala, the most popular build tool is sbt, which is similar to
+Maven or Gradle in the Java world. Sbt is a powerful and flexible tool that
+provides a high level of automation, dependency management, and incremental
+compilation, making it a popular choice for Scala developers.
+
+## Package Managers
+
+In C#, the most popular package manager is NuGet, which is integrated with
+Visual Studio and .NET CLI. In Scala, the build tool typical is responsible for
+managing dependencies as well. sbt's package management provides fine-grained
+control over dependency versions and transitive dependencies.
+
+## Dependency Caching
+
+Both C# and Scala support dependency caching, which means that once a dependency
+is downloaded, it can be reused across different projects or builds. In C#,
+NuGet caches packages in a global location on the local file system. In Scala,
+sbt caches dependencies in a local Ivy repository, which is similar to Maven's
+local repository.
+
+## Project Source Tree Structure
+
+Regarding the project source tree structure, both C# and Scala follow a similar
+structure, where source files are separated from build files, and the source
+tree structure is typically divided into different directories for code and
+tests. However, the actual folder structure can differ slightly between C# and
+Scala projects.
+
+Here's a typical file tree structure of a "Hello World" application including
+tests in C#:
+
+```
+HelloWorld/
+├── HelloWorld/
+│   ├── Program.cs
+└── HelloWorld.Tests/
+    ├── ProgramTest.cs
+```
+
+And here's the equivalent file tree structure in Scala:
+
+```
+HelloWorld/
+├── build.sbt
+├── project/
+│   ├── build.properties
+│   ├── plugins.sbt
+├── src/
+│   ├── main/
+│   │   └── scala/
+│   │       └── HelloWorld.scala
+│   └── test/
+│       └── scala/
+│           └── HelloWorldTest.scala
+```
+
+As you can see, the structure of a Scala project is slightly more complex, with
+additional directories for sbt build files and project configuration.
