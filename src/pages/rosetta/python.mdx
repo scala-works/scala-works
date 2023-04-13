@@ -1,0 +1,65 @@
+# Python
+
+As a Python developer, you'll find that Scala has a similar syntax and
+programming style, but with some key differences in terms of tooling and
+features.
+
+## Build Tools
+
+In terms of build tools, Python developers usually use pip and virtualenv to
+manage dependencies and virtual environments. In Scala, the most popular build
+tool is sbt, which provides a higher level of automation and integration with
+Scala's language features. Sbt allows you to define project dependencies, manage
+compilation and testing, and package your application for deployment.
+
+## Package Managers
+
+Both Python and Scala have package managers to manage external dependencies, but
+again, they differ in implementation. In Python, pip is the default package
+manager, which installs packages from the PyPI repository. In Scala, the build
+tool is typically responsible for package management as well.
+
+## Dependency Caching
+
+Dependency caching is important for both Python and Scala, as it can speed up
+the build process significantly. In Python, pip caches packages in a
+user-specific folder. In Scala, sbt caches dependencies in the user's local Ivy2
+cache.
+
+## Project Tree Structure
+
+Regarding the project source tree structure, both Python and Scala follow a
+similar structure, where source files are separated from build files, and the
+source tree structure is typically divided into different directories for code
+and tests. However, the actual folder structure can differ slightly between
+Python and Scala projects.
+
+Here's a typical file tree structure of a "Hello World" application including
+tests in Python:
+
+```
+HelloWorld/
+├── main.py
+└── tests/
+    └── test_main.py
+```
+
+And here's the equivalent file tree structure in Scala:
+
+```
+HelloWorld/
+├── build.sbt
+├── project/
+│   ├── build.properties
+│   ├── plugins.sbt
+├── src/
+│   ├── main/
+│   │   └── scala/
+│   │       └── HelloWorld.scala
+│   └── test/
+│       └── scala/
+│           └── HelloWorldTest.scala
+```
+
+As you can see, the structure of a Scala project is slightly more complex, with
+additional directories for sbt build files and project configuration.

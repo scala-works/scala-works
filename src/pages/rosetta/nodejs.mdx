@@ -1,0 +1,84 @@
+# Coming from NodeJS
+
+Here are some similarities and differences you can expect when transitioning
+from Node.js to Scala:
+
+## Build Tools
+
+In Node.js, you may be used to working with build tools like npm or yarn, which
+manage dependencies and build your project. Similarly, in Scala, sbt is the most
+commonly used build tool. It allows you to manage dependencies, compile your
+code, and run tests, among other things. Like npm, sbt uses a declarative build
+file (build.sbt) to specify your project's configuration and dependencies.
+
+## Package Managers
+
+In Node.js, npm is also a package manager that allows you to install and manage
+dependencies for your project. Similarly, in Scala, sbt can also manage
+dependencies by downloading them from repositories like Maven Central. You can
+specify dependencies in your build.sbt file, and sbt will automatically download
+and cache them for you.
+
+## Dependency Caching
+
+In Node.js, npm uses a caching system to speed up dependency installation by
+storing packages in a local cache. Similarly, sbt also caches dependencies in a
+local cache, which can be configured to store them in a centralized cache. This
+can greatly speed up the build process and make dependency management more
+efficient.
+
+## Project Source Tree Structure
+
+In Node.js, you may be used to organizing your project's source code in a
+directory structure that separates different concerns. For example, you may have
+a src directory for your application code, a test directory for your tests, and
+so on. Similarly, in Scala, a typical project will have a directory structure
+like this:
+
+```
+project/
+  build.properties
+src/
+  main/
+    resources/
+    scala/
+  test/
+    resources/
+    scala/
+```
+
+The project directory contains configuration files for sbt, and the src
+directory contains your project's source code. main and test directories contain
+the source code and resources for your main application and tests, respectively.
+
+### Hello World Project Structure
+
+Here is an example of a "Hello World" application in Node.js:
+
+```
+hello-world/
+  package.json
+  index.js
+```
+
+And here is an example of a "Hello World" application in Scala:
+
+```
+hello-world/
+  build.sbt
+  project/
+    build.properties
+  src/
+    main/
+      resources/
+      scala/
+        HelloWorld.scala
+    test/
+      resources/
+      scala/
+        HelloWorldSpec.scala
+```
+
+In this example, the HelloWorld.scala file contains the application code, while
+the HelloWorldSpec.scala file contains a test for the HelloWorld class. The
+build.sbt file specifies the project's configuration and dependencies.
